@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Educational Feed
 
-## Getting Started
+A Next.js-based web application that displays an infinite scroll of short-form educational content in a swipeable, mobile-friendly feed, similar to TikTok or Instagram Reels.
 
-First, run the development server:
+## Features
 
+- Infinite scroll feed of educational content
+- Swipe navigation (up/down) between posts
+- Text-to-speech functionality
+- Like and save interactions
+- Mobile-first, responsive design
+- Dynamic content generation using AI
+- Smooth animations and transitions
+
+## Prerequisites
+
+- Node.js 18+ and npm
+- Ollama running locally with the gemma2:2b model
+
+## Setup
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd educational-feed
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Make sure Ollama is running locally with the gemma2:2b model:
+```bash
+ollama run gemma2:2b
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Start the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Visit `/feed?topic=<topic>` to view the feed for a specific topic
+- Available topics: motivation, history, science
+- Swipe up/down to navigate between posts
+- Use the interaction buttons on the right:
+  - ❤️ Like the post
+  - 🔊 Toggle text-to-speech
+  - 🔖 Save the post
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technical Details
 
-## Deploy on Vercel
+- Built with Next.js 14 (App Router)
+- TypeScript for type safety
+- Tailwind CSS for styling
+- Framer Motion for animations
+- React Swipeable for touch gestures
+- Browser's SpeechSynthesis API for TTS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/
+│   ├── api/
+│   │   └── content/
+│   │       └── feed/
+│   │           └── route.ts
+│   │   ├── feed/
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   │   └── components/
+│   │   └── ContentCard.tsx
+│   │   └── types/
+│   │   └── content.ts
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
