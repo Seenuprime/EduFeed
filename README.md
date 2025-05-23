@@ -21,8 +21,8 @@ A Next.js-based web application that displays an infinite scroll of short-form e
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd educational-feed
+git clone https://github.com/Seenuprime/EduFeed.git
+cd EduFeed
 ```
 
 2. Install dependencies:
