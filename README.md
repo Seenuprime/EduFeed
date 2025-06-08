@@ -14,7 +14,7 @@ A Next.js-based web application that displays an infinite scroll of short-form e
 
 ## Prerequisites
 
-- Node.js 18+ and npm
+- Node.js and npm
 - Ollama running locally with the gemma2:2b model
 
 ## Setup
